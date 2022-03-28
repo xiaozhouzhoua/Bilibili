@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: dev
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  # mapper.xml文件中resultMap的type、parameterType、resultType会引用一些实体类，我们需要写上全限定类名，如果不写全限定类名，只写一个实体类的名称的话，那就需要在application.yml文件中设置mybatis:type-aliases-package参数
+  type-aliases-package: com.me.dao

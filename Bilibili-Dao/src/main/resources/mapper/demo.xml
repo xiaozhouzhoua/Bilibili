@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--注意要一一对应，mapper MAPPER mybatis-3-mapper，中间出现任何一个不同就不会识别-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD MAPPER 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+mapper接口代理实现编写规则:
+    1:映射文件中的namespace要等于接口的全路径名称
+    2:映射文件中sql语句的id要等同于接口的方法名称
+    3:映射文件中传入参数类型parameterType要等于接口方法的传入参数类型
+    4:映射文件中返回结果集类型resultType要等于接口方法的返回值类型
+-->
+<mapper namespace="com.me.dao.DemoDao">
+    <select id="query" parameterType="java.lang.Long" resultType="java.util.Map">
+        select id, name, createTime from `demo` where id = #{id}
+    </select>
+</mapper>
